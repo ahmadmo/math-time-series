@@ -100,8 +100,8 @@ fun TimeSeries.smooth(average: LinearTrendLine, factor: Double): TimeSeries {
     check(factor in 0.0..1.0)
     val avg = TimeSeries(size, average::value)
     val dist = TimeSeries(size) { x -> abs(avg[x] - get(x)) }
-    val maximaDist = dist.filterIndexed { x, _ -> isLocalMax(x) }.toDoubleArray()
-    val minimaDist = dist.filterIndexed { x, _ -> isLocalMin(x) }.toDoubleArray()
+    val maximaDist = dist.filterIndexed { x, y -> y >= avg[x] && isLocalMax(x) }.toDoubleArray()
+    val minimaDist = dist.filterIndexed { x, y -> y < avg[x] && isLocalMin(x) }.toDoubleArray()
     val pth = (1.0 - factor) * 100.0
     val smoothedMaxima = StatUtils.percentile(maximaDist, pth)
     val smoothedMinima = StatUtils.percentile(minimaDist, pth)
