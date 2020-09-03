@@ -6,7 +6,7 @@
 
     <groupId>ir.ahmadmo.math</groupId>
     <artifactId>time-series</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 
     <name>Mathematics for Time Series</name>
 
