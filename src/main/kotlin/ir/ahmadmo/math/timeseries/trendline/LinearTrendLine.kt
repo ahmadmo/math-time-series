@@ -5,7 +5,6 @@ import ir.ahmadmo.math.timeseries.*
 import org.apache.commons.math3.stat.StatUtils
 import kotlin.math.abs
 import kotlin.math.atan
-import kotlin.math.sign
 
 /**
  * A linear trend line is simply a [LinearLine].
@@ -101,14 +100,20 @@ fun TimeSeries.smooth(average: LinearTrendLine, factor: Double): TimeSeries {
     check(factor in 0.0..1.0)
     val avg = TimeSeries(size, average::value)
     val dist = TimeSeries(size) { x -> abs(avg[x] - get(x)) }
-    val pivotDist = dist.filterIndexed { x, _ -> isLocalMax(x) }.toDoubleArray()
+    val maximaDist = dist.filterIndexed { x, _ -> isLocalMax(x) }.toDoubleArray()
+    val minimaDist = dist.filterIndexed { x, _ -> isLocalMin(x) }.toDoubleArray()
     val pth = (1.0 - factor) * 100.0
-    val p = StatUtils.percentile(pivotDist, pth)
+    val smoothedMaxima = StatUtils.percentile(maximaDist, pth)
+    val smoothedMinima = StatUtils.percentile(minimaDist, pth)
     return TimeSeries(size) { x ->
         val y = get(x)
-        val error = dist[x] - p
-        if (error > 0.0) y - error * sign(y - avg[x])
-        else y
+        if (y >= avg[x]) {
+            val error = dist[x] - smoothedMaxima
+            if (error > 0.0) y - error else y
+        } else {
+            val error = dist[x] - smoothedMinima
+            if (error > 0.0) y + error else y
+        }
     }
 }
 
