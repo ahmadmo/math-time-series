@@ -116,9 +116,8 @@ SwingWrapper(chart).displayChart()
 
 #### Sample Results
 
-![1.png](https://github.com/ahmadmo/math-time-series/blob/master/src/test/resources/image/trendline/linear/1.png)
-![2.png](https://github.com/ahmadmo/math-time-series/blob/master/src/test/resources/image/trendline/linear/2.png)
-![3.png](https://github.com/ahmadmo/math-time-series/blob/master/src/test/resources/image/trendline/linear/3.png)
-![4.png](https://github.com/ahmadmo/math-time-series/blob/master/src/test/resources/image/trendline/linear/4.png)
-![5.png](https://github.com/ahmadmo/math-time-series/blob/master/src/test/resources/image/trendline/linear/5.png)
-![6.png](https://github.com/ahmadmo/math-time-series/blob/master/src/test/resources/image/trendline/linear/6.png)
+|||
+| ------------- | ------------- |
+| ![1.png](https://github.com/ahmadmo/math-time-series/blob/master/src/test/resources/image/trendline/linear/1.png) | ![2.png](https://github.com/ahmadmo/math-time-series/blob/master/src/test/resources/image/trendline/linear/2.png) |
+| ![3.png](https://github.com/ahmadmo/math-time-series/blob/master/src/test/resources/image/trendline/linear/3.png) | ![4.png](https://github.com/ahmadmo/math-time-series/blob/master/src/test/resources/image/trendline/linear/4.png) |
+| ![5.png](https://github.com/ahmadmo/math-time-series/blob/master/src/test/resources/image/trendline/linear/5.png) | ![6.png](https://github.com/ahmadmo/math-time-series/blob/master/src/test/resources/image/trendline/linear/6.png) |
