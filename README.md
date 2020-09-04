@@ -40,8 +40,7 @@ dependencies {
 
 #### Imports
 ```kotlin
-import ir.ahmadmo.math.timeseries.trend.Trend
-import ir.ahmadmo.math.timeseries.trend.linearTrendLines
+import ir.ahmadmo.math.timeseries.trend.*
 import org.knowm.xchart.SwingWrapper
 import org.knowm.xchart.XYChartBuilder
 import org.knowm.xchart.style.Styler
