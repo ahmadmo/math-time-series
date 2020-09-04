@@ -5,10 +5,46 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ir.ahmadmo.math</groupId>
-    <artifactId>time-series</artifactId>
-    <version>0.0.3</version>
+    <artifactId>math-time-series</artifactId>
+    <version>0.0.4</version>
 
     <name>Mathematics for Time Series</name>
+    <description>Mathematics for Time Series</description>
+    <url>https://github.com/ahmadmo/math-time-series</url>
+    <inceptionYear>2020</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://api.github.com/licenses/mit</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>ahmadmo</id>
+            <name>Ahmad Mozafarnia</name>
+            <email>ahmad.mozafarnia@gmail.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git://github.com/ahmadmo/math-time-series.git</connection>
+        <developerConnection>scm:git://github.com/ahmadmo/math-time-series.git</developerConnection>
+        <url>git://github.com/ahmadmo/math-time-series.git</url>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -116,6 +152,46 @@
                 <configuration>
                     <release>${maven.compiler.release}</release>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
