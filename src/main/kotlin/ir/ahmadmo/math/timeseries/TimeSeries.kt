@@ -25,7 +25,7 @@ fun TimeSeries.isLocalMax(time: Int): Boolean {
  * Tests whether the value at the given [time] is a local minimum or not.
  * Special cases are the starting and ending points which are treated as local minimums.
  *
- *                          __ time-series
+ *                        __ time-series
  *     __          _____/
  *       \       /    min
  *        \    /

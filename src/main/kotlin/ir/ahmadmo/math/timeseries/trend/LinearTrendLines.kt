@@ -1,7 +1,7 @@
 package ir.ahmadmo.math.timeseries.trend
 
 /**
- * A linear trend line is a bounding linear line for the y value movement of a time-series.
+ * A linear trend line is a bounding linear line for the y value movement of a trend.
  *
  * @param resistance a resistance trend line is formed when y value increases and then rebounds at a pivot point
  *                   that aligns with at least two previous resistance pivot points.

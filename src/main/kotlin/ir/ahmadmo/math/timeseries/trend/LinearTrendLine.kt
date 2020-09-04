@@ -7,7 +7,7 @@ import ir.ahmadmo.math.timeseries.Side
 import ir.ahmadmo.math.timeseries.isLocalMax
 
 /**
- * A linear trend line is a bounding [LinearLine] for the y value movement of a time-series.
+ * A linear trend line is a bounding [LinearLine] for the y value movement of a trend.
  */
 typealias LinearTrendLine = LinearLine
 

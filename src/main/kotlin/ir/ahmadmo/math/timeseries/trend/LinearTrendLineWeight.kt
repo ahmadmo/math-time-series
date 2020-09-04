@@ -5,15 +5,15 @@ import kotlin.math.sign
 
 /**
  * Represents weight of a [LinearTrendLine] separated by its pivot.
- * Weight is simply the area between a trend-line and a time-series.
- * Notice that trend-line and time-series must intersect each other only at local maximum(s).
+ * Weight is simply the area between a trend-line and a trend.
+ * Notice that trend-line and trend must intersect each other only at local maximum(s).
  *
  *         pivot (max)
  *     _________*______________________ line
  *     ......../\......................
  *     ....../   \..............max....
  *     ..../      \............./\.....
- *     __/         \__......../   \____ time-series
+ *     __/         \__......../   \____ trend
  *                    \_____/
  *
  *     weight = dotted area
