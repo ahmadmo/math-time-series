@@ -11,7 +11,7 @@ import kotlin.math.atan
  */
 typealias Trend = TimeSeries
 
-fun Trend.linearTrendLine(): LinearTrendLine {
+fun Trend.resistanceLine(): LinearTrendLine {
 
     check(isNotEmpty())
 
@@ -26,7 +26,7 @@ fun Trend.linearTrendLine(): LinearTrendLine {
 
         val direction = if (weightSign == 1) Side.LEFT else Side.RIGHT
 
-        val newPivot = line.nextPivot(this, direction) ?: break
+        val newPivot = line.nextMaxPivot(this, direction) ?: break
         val newTheta = line.rotateTo(newPivot)
         val newLine = LinearTrendLine(newPivot, newTheta)
         val newWeightSign = newLine.weight(this).sign
@@ -64,8 +64,8 @@ private fun binarySearch(length: Double, comparator: (Double) -> Int) {
 
 fun Trend.linearTrendLines(smoothingFactors: DoubleArray): LinearTrendLines {
 
-    val resistance = linearTrendLine()
-    val support = mirror().linearTrendLine().mirror(this)
+    val resistance = resistanceLine()
+    val support = mirror().resistanceLine().mirror(this)
     val average = average(resistance, support)
 
     return if (smoothingFactors.isEmpty()) {

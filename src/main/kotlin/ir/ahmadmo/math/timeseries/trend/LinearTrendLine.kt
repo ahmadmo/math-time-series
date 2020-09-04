@@ -18,7 +18,7 @@ fun LinearTrendLine.weight(trend: Trend): LinearTrendLineWeight {
     return LinearTrendLineWeight(left, right)
 }
 
-fun LinearTrendLine.nextPivot(trend: Trend, side: Side): Point? =
+fun LinearTrendLine.nextMaxPivot(trend: Trend, side: Side): Point? =
     side.range(trend, pivot)
         .asSequence()
         .filter(trend::isLocalMax)
