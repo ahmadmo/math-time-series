@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ir.ahmadmo.math</groupId>
+    <groupId>com.github.ahmadmo</groupId>
     <artifactId>math-time-series</artifactId>
     <version>0.0.4</version>
 
@@ -52,6 +52,7 @@
         <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
         <kotlin.version>1.4.0</kotlin.version>
+        <dokka.version>1.4.0</dokka.version>
     </properties>
 
     <dependencies>
@@ -81,6 +82,14 @@
         </dependency>
 
     </dependencies>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jcenter</id>
+            <name>JCenter</name>
+            <url>https://jcenter.bintray.com/</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <build>
         <plugins>
@@ -178,6 +187,30 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jetbrains.dokka</groupId>
+                <artifactId>dokka-maven-plugin</artifactId>
+                <version>${dokka.version}</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>dokka</goal>
+                            <goal>javadoc</goal>
+                            <goal>javadocJar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dokkaPlugins>
+                        <plugin>
+                            <groupId>org.jetbrains.dokka</groupId>
+                            <artifactId>kotlin-as-java-plugin</artifactId>
+                            <version>${dokka.version}</version>
+                        </plugin>
+                    </dokkaPlugins>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
