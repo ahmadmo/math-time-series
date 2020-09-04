@@ -22,7 +22,7 @@ You can use Maven or Gradle with [JitPack](https://jitpack.io/) to add the libra
 <dependency>
     <groupId>com.github.ahmadmo</groupId>
     <artifactId>math-time-series</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
 </dependency>
 ```
 
@@ -32,7 +32,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 dependencies {
-    compile 'com.github.ahmadmo:math-time-series:0.0.2'
+    compile 'com.github.ahmadmo:math-time-series:0.0.3'
 }
 ```
 
