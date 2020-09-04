@@ -4,7 +4,7 @@ The goal of this library is to contain a bunch of common time-series analysis to
 
 ## List of contents
 
-[Linear Trend Line](#linear-trend-line)
+- [Linear Trend Line](#linear-trend-line)
 
 ## Build Instructions
 
@@ -72,7 +72,7 @@ val averageData = DoubleArray(trend.size, average::value)
 ```
 Notice that this is the user's responsibilty to choose the rigth values for `smoothingFactors` to achieve better results.
 
-The function for generating a random time-series (trend):
+The function for generating a random trend (time-series):
 
 ```kotlin
 fun generateRandomTrend(size: Int): Trend {
