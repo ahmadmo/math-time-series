@@ -70,7 +70,7 @@ val resistanceData = DoubleArray(trend.size, resistance::value)
 val supportData = DoubleArray(trend.size, support::value)
 val averageData = DoubleArray(trend.size, average::value)
 ```
-Notice that this is the user's responsibilty to choose the rigth values for `smoothingFactors` to achieve better results.
+Notice that this is the user's responsibility to choose the rigth values for `smoothingFactors` from `0.0` to `1.0` to achieve better results. Choosing higher values results in smoother trends and consequently tighter trend lines. An empty `smoothingFactors` disables smoothing.
 
 The function for generating a random trend (time-series):
 
