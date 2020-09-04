@@ -8,31 +8,21 @@ The goal of this library is to contain a bunch of common time-series analysis to
 
 ## Build Instructions
 
-You can use Maven or Gradle with [JitPack](https://jitpack.io/) to add the library to your project.
+You can use Maven or Gradle to add the library to your project.
 
 #### Maven
 ```xml
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-...
 <dependency>
     <groupId>com.github.ahmadmo</groupId>
     <artifactId>math-time-series</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 </dependency>
 ```
 
 #### Gradle
 ```gradle
-repositories {		
-    maven { url 'https://jitpack.io' }
-}
 dependencies {
-    compile 'com.github.ahmadmo:math-time-series:0.0.3'
+    compile 'com.github.ahmadmo:math-time-series:0.0.4'
 }
 ```
 
