@@ -1,6 +1,5 @@
-package ir.ahmadmo.math.timeseries.trendline
+package ir.ahmadmo.math.timeseries.trend
 
-import ir.ahmadmo.math.timeseries.TimeSeries
 import org.knowm.xchart.SwingWrapper
 import org.knowm.xchart.XYChartBuilder
 import org.knowm.xchart.style.Styler
@@ -41,14 +40,14 @@ fun main() {
     SwingWrapper(chart).displayChart()
 }
 
-fun generateRandomTrend(size: Int): TimeSeries {
-    val points = TimeSeries(size)
+fun generateRandomTrend(size: Int): Trend {
+    val trend = Trend(size)
     var min = Double.MAX_VALUE
-    for (x in points.indices.drop(1)) {
-        points[x] = points[x - 1] + Math.random() - 0.5
-        min = min(min, points[x])
+    for (x in trend.indices.drop(1)) {
+        trend[x] = trend[x - 1] + Math.random() - 0.5
+        min = min(min, trend[x])
     }
     val shift = abs(min(min, 0.0))
-    return if (shift == 0.0) points
-    else TimeSeries(size) { x -> points[x] + shift }
+    return if (shift == 0.0) trend
+    else Trend(size) { x -> trend[x] + shift }
 }

@@ -1,4 +1,4 @@
-package ir.ahmadmo.math.timeseries.trendline
+package ir.ahmadmo.math.timeseries.trend
 
 import ir.ahmadmo.math.epsilonRange
 import kotlin.math.sign
