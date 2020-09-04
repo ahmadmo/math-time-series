@@ -4,7 +4,7 @@ The goal of this library is to contain a bunch of common time-series analysis to
 
 ## List of contents
 
-[`LinearTrendLine`](#linear-trend-line)
+[Linear Trend Line](#linear-trend-line)
 
 ## Build Instructions
 
@@ -40,7 +40,7 @@ dependencies {
 
 #### Imports
 ```kotlin
-import ir.ahmadmo.math.timeseries.TimeSeries
+import ir.ahmadmo.math.timeseries.trend.*
 import org.knowm.xchart.SwingWrapper
 import org.knowm.xchart.XYChartBuilder
 import org.knowm.xchart.style.Styler
@@ -75,16 +75,16 @@ Notice that this is the user's responsibilty to choose the rigth values for `smo
 The function for generating a random time-series (trend):
 
 ```kotlin
-fun generateRandomTrend(size: Int): TimeSeries {
-    val points = TimeSeries(size)
+fun generateRandomTrend(size: Int): Trend {
+    val trend = Trend(size)
     var min = Double.MAX_VALUE
-    for (x in points.indices.drop(1)) {
-        points[x] = points[x - 1] + Math.random() - 0.5
-        min = min(min, points[x])
+    for (x in trend.indices.drop(1)) {
+        trend[x] = trend[x - 1] + Math.random() - 0.5
+        min = min(min, trend[x])
     }
     val shift = abs(min(min, 0.0))
-    return if (shift == 0.0) points
-    else TimeSeries(size) { x -> points[x] + shift }
+    return if (shift == 0.0) trend
+    else Trend(size) { x -> trend[x] + shift }
 }
 ```
 
@@ -112,4 +112,4 @@ chart.seriesMap.values.forEach { it.marker = SeriesMarkers.NONE }
 SwingWrapper(chart).displayChart()
 ```
 
-[Here](https://github.com/ahmadmo/math-time-series/blob/master/src/test/kotlin/ir/ahmadmo/math/timeseries/trendline/LinearTrendLineDrawer.kt) is the complete sample code demonstrating how to draw linear trend lines for a time-series.
+[Here](https://github.com/ahmadmo/math-time-series/blob/master/src/test/kotlin/ir/ahmadmo/math/timeseries/trend/LinearTrendLineDrawer.kt) is the complete sample code demonstrating how to draw linear trend lines for a time-series.
