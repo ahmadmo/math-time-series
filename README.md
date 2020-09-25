@@ -5,8 +5,8 @@ The goal of this library is to contain a bunch of common time-series analysis to
 ## List of contents
 
 - [Linear Trend Line](#linear-trend-line)
-- [Relative Strength Index](#relative-strength-index)
-- [Moving Average Convergence Divergence](#moving-average-convergence-divergence)
+- [Relative Strength Index](#relative-strength-index-rsi)
+- [Moving Average Convergence Divergence](#moving-average-convergence-divergence-macd)
 - [Bollinger Bands](#bollinger-bands)
 - [Ichimoku Cloud](#ichimoku-cloud)
 - [Fibonacci Retracement](#fibonacci-retracement)
